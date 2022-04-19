@@ -5,8 +5,8 @@ rootProject.name = "aliplugin"
 
 // Plugins are included like this
 include(
-    "HopOnRoblox",
-    "Clown"
+    "Clown",
+    "HopOnRoblox"
 )
 
 // This is required because plugins are in the ExamplePlugins/kotlin subdirectory.
