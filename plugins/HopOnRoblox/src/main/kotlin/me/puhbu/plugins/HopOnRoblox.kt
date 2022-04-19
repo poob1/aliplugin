@@ -35,7 +35,7 @@ class HopOnBloonsWhen : Plugin() {
             val message = Message(this)
             if (CoreUser(message.author).id == StoreStream.getUsers().me.id) return@subscribe
             val content = message.content.lowercase()
-            if (content.contains("hop on roblox") || content.contains("get on roblox") ||
+            if (content.contains("hop on roblox", ignoreCase = true) || content.contains("get on roblox", ignoreCase = true) ||
                 content.contains("com.roblox.client")
             ) {
                 hopOnBloons()
