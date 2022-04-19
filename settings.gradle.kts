@@ -18,5 +18,5 @@ include(
 // then simply change the path
 rootProject.children.forEach {
     // Change kotlin to java if you'd rather use java
-    it.projectDir = file("${it.name}")
+    it.projectDir = file("plugins/${it.name}")
 }
