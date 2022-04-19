@@ -1,6 +1,7 @@
 Clown
-plays clown horn when someone sends clown emoji or types clown
+
+It will play clown horns when someone says clown or sends a 🤡 emoji.
 
 HopOnRoblox
 
-hop on roblox/get on roblox or com.roblox.client opens roblox, message must be lowercase untill i fix it
+You need Roblox installed, it will open Roblox when someone said hop on Roblox/roblox and get on Roblox/roblox
