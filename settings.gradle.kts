@@ -1,12 +1,12 @@
-rootProject.name = "AliucordPlugins"
+rootProject.name = "aliplugin"
 
 // This file sets what projects are included. Every time you add a new project, you must add it
 // to the includes below.
 
 // Plugins are included like this
 include(
-    "MyFirstCommand",
-    "MyFirstPatch"
+    "HopOnRoblox",
+    "Clown"
 )
 
 // This is required because plugins are in the ExamplePlugins/kotlin subdirectory.
@@ -18,5 +18,5 @@ include(
 // then simply change the path
 rootProject.children.forEach {
     // Change kotlin to java if you'd rather use java
-    it.projectDir = file("ExamplePlugins/kotlin/${it.name}")
+    it.projectDir = file("${it.name}")
 }
