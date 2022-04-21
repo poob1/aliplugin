@@ -27,15 +27,6 @@ import kotlin.system.exitProcess
 class Moyai : Plugin() {
     private var observable: Subscription? = null
     override fun start(ctx: Context) {
-        patcher.after<StoreMessageReactions>(
-            "handleReactionAdd",
-            MessageReactionUpdate::class.java
-        ) {
-            val r = it.args[0] as MessageReactionUpdate
-            if (r.b().d() != "\uD83D\uDDFF") return@after
-            if (r.a() != StoreStream.getChannelsSelected().id) return@after
-            funny()
-        }
         observable = StoreStream.getGatewaySocket().messageCreate.onBackpressureBuffer().subscribe {
             if (this == null) return@subscribe
             val message = Message(this)
