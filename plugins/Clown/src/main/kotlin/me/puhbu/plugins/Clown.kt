@@ -34,7 +34,6 @@ class Moyai : Plugin() {
             if (message.channelId != StoreStream.getChannelsSelected().id) return@subscribe
             if (content.contains("🤡") || content.contains("clown")) funny()
             if (content.contains("puh") || content.contains("puhbu")) b()
-           }
         }
 
     }
