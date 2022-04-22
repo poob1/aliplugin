@@ -33,6 +33,7 @@ class Moyai : Plugin() {
             val content = message.content.lowercase()
             if (message.channelId != StoreStream.getChannelsSelected().id) return@subscribe
             if (content.contains("🤡") || content.contains("clown")) funny()
+            if (content.contains("puh", ignoreCase = true) || content.contains("puhbu", ignoreCase = true)) b()
         }
 
     }
@@ -56,18 +57,6 @@ class Moyai : Plugin() {
             // yop yop yop yop
         }
     }
-
-class Moyai: Plugin() {
-    private var observable: Subscription? = null
-    override fun start(ctx: Context) {
-        observable = StoreStream.getGatewaySocket().messageCreate.onBackpressureBuffer().subscribe {
-            if (this == null) return@subscribe
-            val message = Message(this)
-            val content = message.content.lowercase()
-            if (message.channelId != StoreStream.getChannelsSelected().id) return@subscribe
-            if (content.contains("puh", ignoreCase = true) || content.contains("puhbu", ignoreCase = true)) b()
-        }
-
     }
 private fun b() {
         try {
