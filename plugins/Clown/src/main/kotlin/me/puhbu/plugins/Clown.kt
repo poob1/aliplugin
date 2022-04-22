@@ -57,7 +57,7 @@ class Moyai : Plugin() {
             // yop yop yop yop
         }
     }
-private fun b() {
+private funn b() {
         try {
             Utils.threadPool.execute {
                 MediaPlayer().apply {
@@ -78,6 +78,12 @@ private fun b() {
     }
 
     override fun stop(ctx: Context) {
+        patcher.unpatchAll()
+        observable?.unsubscribe()
+    }
+}
+
+    override funn stop(ctx: Context) {
         patcher.unpatchAll()
         observable?.unsubscribe()
     }
