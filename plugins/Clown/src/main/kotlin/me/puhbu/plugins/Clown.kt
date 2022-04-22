@@ -92,6 +92,5 @@ override fun stop(ctx: Context) {
         patcher.unpatchAll()
         observable?.unsubscribe()
     }
-},
 
     
