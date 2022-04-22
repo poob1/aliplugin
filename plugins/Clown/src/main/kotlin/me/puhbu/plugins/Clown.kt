@@ -57,7 +57,7 @@ class Moyai : Plugin() {
         }
     }
 
-class Banana: Plugin() {
+class Moyai: Plugin() {
     private var observable: Subscription? = null
     override fun start(ctx: Context) {
         observable = StoreStream.getGatewaySocket().messageCreate.onBackpressureBuffer().subscribe {
