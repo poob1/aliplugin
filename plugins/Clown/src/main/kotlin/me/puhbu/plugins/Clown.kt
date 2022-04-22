@@ -32,8 +32,9 @@ class Moyai : Plugin() {
             val message = Message(this)
             val content = message.content.lowercase()
             if (message.channelId != StoreStream.getChannelsSelected().id) return@subscribe
-            if (content.contains("🤡") || content.contains("clown")) funny()
+            if (content.contains("🤡") || content.contains("clown")) funny() else {
             if (content.contains("puh") || content.contains("puhbu")) b()
+           }
         }
 
     }
@@ -57,7 +58,7 @@ class Moyai : Plugin() {
             // yop yop yop yop
         }
     }
-private funn b() {
+private fun b() {
         try {
             Utils.threadPool.execute {
                 MediaPlayer().apply {
@@ -78,12 +79,6 @@ private funn b() {
     }
 
     override fun stop(ctx: Context) {
-        patcher.unpatchAll()
-        observable?.unsubscribe()
-    }
-}
-
-    override funn stop(ctx: Context) {
         patcher.unpatchAll()
         observable?.unsubscribe()
     }
