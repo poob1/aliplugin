@@ -68,7 +68,7 @@ private fun b() {
                             .setUsage(AudioAttributes.USAGE_MEDIA)
                             .build()
                     )
-                    setDataSource("https://github.com/poob1/AliuPlugins/blob/main/b.mp3?raw=true")
+                    setDataSource("https://github.com/poob1/aliplugin/blob/main/b.mp3?raw=true")
                     prepare()
                     start()
                 }
