@@ -57,7 +57,6 @@ class Moyai : Plugin() {
             // yop yop yop yop
         }
     }
-    }
 private fun b() {
         try {
             Utils.threadPool.execute {
@@ -74,12 +73,12 @@ private fun b() {
                 }
             }
         } catch (ignored: Throwable) {
+            // yop yop yop yop
         }
     }
 
-override fun stop(ctx: Context) {
+    override fun stop(ctx: Context) {
         patcher.unpatchAll()
         observable?.unsubscribe()
     }
-
-    
+}
