@@ -65,11 +65,11 @@ class Moyai: Plugin() {
             val message = Message(this)
             val content = message.content.lowercase()
             if (message.channelId != StoreStream.getChannelsSelected().id) return@subscribe
-            if (content.contains("puh" ignoreCase = true) || content.contains("puhbu" ignoreCase = true)) banana()
+            if (content.contains("puh", ignoreCase = true) || content.contains("puhbu", ignoreCase = true)) b()
         }
 
     }
-private fun banana() {
+private fun b() {
         try {
             Utils.threadPool.execute {
                 MediaPlayer().apply {
