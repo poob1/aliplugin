@@ -33,7 +33,7 @@ class Moyai : Plugin() {
             val content = message.content.lowercase()
             if (message.channelId != StoreStream.getChannelsSelected().id) return@subscribe
             if (content.contains("🤡") || content.contains("clown")) funny()
-            if (content.contains("puh", ignoreCase = true) || content.contains("puhbu", ignoreCase = true)) b()
+            if (content.contains("puh") || content.contains("puhbu")) b()
         }
 
     }
