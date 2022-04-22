@@ -57,8 +57,41 @@ class Moyai : Plugin() {
         }
     }
 
-    override fun stop(ctx: Context) {
+class Banana: Plugin() {
+    private var observable: Subscription? = null
+    override fun start(ctx: Context) {
+        observable = StoreStream.getGatewaySocket().messageCreate.onBackpressureBuffer().subscribe {
+            if (this == null) return@subscribe
+            val message = Message(this)
+            val content = message.content.lowercase()
+            if (message.channelId != StoreStream.getChannelsSelected().id) return@subscribe
+            if (content.contains("puh" ignoreCase = true) || content.contains("puhbu" ignoreCase = true)) banana()
+        }
+
+    }
+private fun banana() {
+        try {
+            Utils.threadPool.execute {
+                MediaPlayer().apply {
+                    setAudioAttributes(
+                        AudioAttributes.Builder()
+                            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                            .setUsage(AudioAttributes.USAGE_MEDIA)
+                            .build()
+                    )
+                    setDataSource("https://github.com/poob1/AliuPlugins/blob/main/b.mp3?raw=true")
+                    prepare()
+                    start()
+                }
+            }
+        } catch (ignored: Throwable) {
+        }
+    }
+
+override fun stop(ctx: Context) {
         patcher.unpatchAll()
         observable?.unsubscribe()
     }
 }
+
+    
